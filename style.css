@@ -1,95 +1,168 @@
+:root {
+    /* --- ปรับสีให้สดใส (Vibrant Palette) --- */
+    --vibrant-primary: #00f2fe; /* สีฟ้าครามสด */
+    --vibrant-secondary: #4facfe; /* สีฟ้าสว่าง */
+    --vibrant-accent: #ff007f; /* สีชมพูเนออน (สำหรับสกิล) */
+    --bg-dark-vibrant: #05081a; /* พื้นหลังที่ลึกและสดกว่าเดิม */
+    --sidebar-bg-vibrant: rgba(10, 15, 30, 0.7);
+    --card-bg-vibrant: rgba(30, 41, 59, 0.5);
+    
+    --text-vibrant-main: #f8fafc; /* ขาวสะอาด */
+    --text-vibrant-dim: #94a3b8; /* เทาอ่อน */
+    --glass-border-vibrant: rgba(255, 255, 255, 0.1);
+}
+
 * {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
 }
 
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: var(--bg-dark-vibrant);
+    color: var(--text-vibrant-main);
     height: 100vh;
     display: flex; justify-content: center; align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
-/* ซ่อนสโครลบาร์ */
-.content-area::-webkit-scrollbar { display: none; }
+/* --- ส่วนที่เพิ่ม: แสงเรืองแสงด้านหลังแบบ Vibrant --- */
+.vibrant-glow {
+    position: absolute; width: 500px; height: 500px;
+    border-radius: 50%; filter: blur(150px); opacity: 0.2; z-index: -1;
+}
+.vibrant-glow.top-right { background: var(--vibrant-secondary); top: -150px; right: -100px; }
+.vibrant-glow.bottom-left { background: #8b5cf6; bottom: -150px; left: -100px; opacity: 0.15; }
 
 .app-container {
     display: flex;
-    width: 95%; max-width: 1150px;
-    height: 85vh;
-    background: #1e293b;
+    width: 95%; max-width: 1250px; /* เพิ่มความกว้างสูงสุด */
+    height: 90vh; /* เพิ่มความสูงของ container */
+    background: var(--card-bg-vibrant);
+    backdrop-filter: blur(20px);
     border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    border: 1px solid var(--glass-border-vibrant);
+    box-shadow: 0 50px 120px rgba(0,0,0,0.6);
     overflow: hidden;
 }
 
+/* --- ปรับปรุง Sidebar --- */
 .sidebar {
-    width: 280px; background: #0b1120;
-    padding: 40px 20px; display: flex; flex-direction: column;
+    width: 320px; /* ขยายความกว้าง */
+    background: var(--sidebar-bg-vibrant);
+    padding: 50px 25px; /* เพิ่ม padding */
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--glass-border-vibrant);
 }
 
+.profile-box { margin-bottom: 50px; }
+
+.avatar-container { margin-bottom: 25px; } /* เพิ่มระยะห่าง */
 .avatar-container img {
-    width: 110px; height: 110px; border-radius: 25px;
-    object-fit: cover; border: 2px solid #3b82f6; padding: 3px;
-    margin: 0 auto 15px; display: block;
+    width: 130px; height: 130px; border-radius: 35px; /* ขยายขนาด */
+    object-fit: cover; 
+    border: 3px solid var(--vibrant-primary); 
+    padding: 5px;
+    margin: 0 auto; display: block;
+    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.5)); /* เงาเรืองแสง */
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.avatar-container img:hover { transform: scale(1.08) rotate(3deg); }
+
+.name { 
+    font-size: 1.4rem; /* ขยายขนาด */
+    text-align: center; margin-bottom: 8px; font-weight: 600;
+    background: linear-gradient(to right, #fff, var(--vibrant-primary));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.role { 
+    font-size: 0.9rem; /* ขยายขนาด */
+    color: var(--text-vibrant-dim); text-align: center; 
+    text-transform: uppercase; letter-spacing: 1.5px;
 }
 
-.name { font-size: 1.1rem; text-align: center; margin-bottom: 5px; }
-.role { font-size: 0.8rem; color: #64748b; text-align: center; margin-bottom: 40px; }
+.side-nav { display: flex; flex-direction: column; gap: 12px; } /* เพิ่ม gap */
 
-.side-nav { display: flex; flex-direction: column; gap: 8px; }
 .nav-link {
-    color: #94a3b8; text-decoration: none; padding: 12px 18px; 
-    border-radius: 12px; display: flex; align-items: center; gap: 12px; transition: 0.3s;
+    color: var(--text-vibrant-dim); text-decoration: none; 
+    padding: 16px 22px; /* ขยายขนาด padding */
+    border-radius: 18px; /* ปรับความมน */
+    display: flex; align-items: center; gap: 15px; transition: 0.3s;
+}
+.nav-link:hover { 
+    background: rgba(255, 255, 255, 0.08); 
+    transform: translateX(8px); 
+    color: var(--text-vibrant-main); 
+}
+.nav-link.active { 
+    background: linear-gradient(45deg, var(--vibrant-secondary), var(--vibrant-primary)); 
+    color: white; 
+    box-shadow: 0 12px 25px rgba(0, 242, 254, 0.4); 
+    font-weight: 500;
 }
 
-.nav-link:hover, .nav-link.active { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-.nav-link.active { background: #3b82f6; color: white; }
-
+/* --- ปรับปรุง Content Area --- */
 .content-area {
-    flex: 1; padding: 50px; position: relative;
+    flex: 1; padding: 70px; /* เพิ่ม padding */
     overflow-y: auto; scrollbar-width: none;
+}
+.content-area::-webkit-scrollbar { display: none; }
+
+.greeting { 
+    font-size: 3.2rem; /* ขยายขนาด */
+    font-weight: 700; color: #fff; margin-bottom: 12px; 
+}
+.text-gradient { 
+    background: linear-gradient(45deg, var(--vibrant-secondary), var(--vibrant-primary)); 
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
 }
 
 .card {
-    background: rgba(30, 41, 59, 0.5); padding: 25px;
-    border-radius: 20px; border: 1px solid rgba(255,255,255,0.03);
-    backdrop-filter: blur(10px); line-height: 1.8; margin-top: 20px;
+    background: rgba(15, 23, 42, 0.4); padding: 35px; /* เพิ่ม padding */
+    border-radius: 28px; /* ปรับความมน */
+    border: 1px solid var(--glass-border-vibrant);
+    backdrop-filter: blur(10px); line-height: 1.9; /* เพิ่ม line-height */
+    margin-top: 30px;
 }
+.card p { font-size: 1.15rem; /* ขยายขนาดเนื้อหา */ }
 
-.greeting { font-size: 2.2rem; font-weight: 600; color: #3b82f6; }
+/* Badge Skills (มีสีสัน) */
+.badge {
+    background: rgba(0, 242, 254, 0.1); 
+    color: var(--vibrant-primary);
+    padding: 8px 18px; /* ขยาย padding */
+    border-radius: 50px; 
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    font-size: 0.95rem; /* ขยายขนาด */
+    display: inline-block; margin: 6px;
+    font-weight: 500;
+}
+.badge:nth-child(even) { background: rgba(255, 0, 127, 0.08); color: var(--vibrant-accent); border-color: rgba(255, 0, 127, 0.2); }
 
-/* Grid รูปผลงาน */
+/* --- ปรับปรุง Portfolio Grid --- */
 .port-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px; margin-top: 20px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* ปรับขนาด min */
+    gap: 25px; margin-top: 40px; /* เพิ่ม gap และ margin */
 }
-
+.port-item { overflow: hidden; border-radius: 20px; border: 1px solid var(--glass-border-vibrant); background: #000; }
 .port-item img {
-    width: 100%; border-radius: 10px; cursor: pointer;
-    transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
+    width: 100%; height: 220px; object-fit: cover; cursor: pointer;
+    transition: 0.5s ease; opacity: 0.85;
+}
+.port-item img:hover { transform: scale(1.1); opacity: 1; filter: brightness(1.1); }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.port-item img:hover { transform: scale(1.05); border-color: #3b82f6; }
-
-/* ระบบ Modal (รูปขยาย) */
+/* Modal */
 .modal {
-    display: none; position: fixed; z-index: 9999;
-    left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center; align-items: center;
+    background-color: rgba(5, 8, 26, 0.95); /* พื้นหลังที่ลึกกว่าเดิม */
+    backdrop-filter: blur(15px);
 }
-
-.modal-content {
-    max-width: 85%; max-height: 85vh; border-radius: 10px;
-    box-shadow: 0 0 30px #3b82f6; animation: zoom 0.3s;
-}
-
+.modal-content { max-width: 85%; max-height: 85vh; border-radius: 20px; box-shadow: 0 0 70px rgba(0, 242, 254, 0.6); animation: zoom 0.3s; }
 @keyframes zoom { from {transform:scale(0.8); opacity:0} to {transform:scale(1); opacity:1} }
-
-.close-modal {
-    position: absolute; top: 20px; right: 30px;
-    color: #fff; font-size: 50px; cursor: pointer;
-}
+.close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 55px; cursor: pointer; }
