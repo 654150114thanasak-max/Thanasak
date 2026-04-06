@@ -6,26 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
         home: `
             <p class="greeting">สวัสดีครับ</p>
             <div class="card">
-                <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม <strong>ธนศักดิ์ กลิ่นมาลี</strong> ผมมีความมุ่งมั่นที่จะพัฒนาทักษะด้าน Software และการออกแบบให้ดียิ่งขึ้นในทุกๆ วัน</p>
+                <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม <strong>ธนศักดิ์ กลิ่นมาลี</strong> ผมมุ่งมั่นพัฒนาทักษะด้าน Software และงานออกแบบอย่างต่อเนื่องครับ</p>
             </div>
         `,
         about: `
             <p class="greeting">ข้อมูลส่วนตัว</p>
             <div class="card">
                 <p><strong>ชื่อ-นามสกุล:</strong> นายธนศักดิ์ กลิ่นมาลี</p>
-                <p><strong>ตำแหน่ง:</strong> Software Developer / Designer</p>
                 <p><strong>ทักษะ:</strong> HTML, CSS, JavaScript, GitHub, Photoshop</p>
             </div>
         `,
         edu: `
             <p class="greeting">การศึกษา</p>
             <div class="card">
-                <p><i class="fas fa-university"></i> <strong>ระดับปริญญาตรี:</strong> [ระบุชื่อมหาวิทยาลัยของคุณ]</p>
-                <p><i class="fas fa-school"></i> <strong>ระดับมัธยมศึกษา:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
+                <p><i class="fas fa-university"></i> <strong>ระดับปริญญาตรี:</strong> มหาวิทยาลัยราชภัฏเพชรบุรี</p>
             </div>
         `,
         port: `
             <p class="greeting">แฟ้มสะสมงาน</p>
+            <p style="color: #94a3b8; margin-bottom: 10px;">(คลิกที่รูปเพื่อขยายใหญ่)</p>
             <div class="port-grid">
                 <div class="port-item"><img src="Images/work1.jpg"></div>
                 <div class="port-item"><img src="Images/work2.jpg"></div>
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="card">
                 <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thansak.k@email.com</p>
                 <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> Thansak Klinmalee</p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>ที่อยู่:</strong> จังหวัดเพชรบุรี, ประเทศไทย</p>
             </div>
         `
     };
@@ -62,6 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
             changePage(pageId);
         });
+    });
+
+    // --- ระบบคลิกดูรูปขยาย ---
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgFull");
+
+        // ถ้าคลิกที่รูปในคลาส port-item
+        if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
+            modal.style.display = "flex";
+            modalImg.src = e.target.src;
+        }
+
+        // ถ้าคลิกที่ปุ่มปิด หรือพื้นที่ว่าง ให้ปิด Modal
+        if (e.target.classList.contains('close-modal') || e.target.id === 'imageModal') {
+            modal.style.display = "none";
+        }
     });
 
     changePage('home');
