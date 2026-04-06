@@ -2,7 +2,9 @@
     --vibrant-primary: #00f2fe;
     --vibrant-secondary: #4facfe;
     --vibrant-accent: #ff007f;
-    --bg-dark-vibrant: #f4faff;
+    /* เปลี่ยนสีพื้นหลัง */
+    --bg-vibrant: #e0f2ff; /* หรือสีอื่นๆ ที่เลือก */
+}
     --sidebar-bg-vibrant: rgba(10, 15, 30, 0.9);
     --card-bg-vibrant: rgba(30, 41, 59, 0.5);
     --text-vibrant-main: #f8fafc;
