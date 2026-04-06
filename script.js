@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				<p><strong>ชื่อเล่น:</strong> กอล์ฟ</p>
 				<p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
 				<p><strong> </strong> อายุ 28 ปี สัญชาติ ไทย เชื่อชาติ ไทย ศาสนา พุทธ</p>
-                            </div>
+            </div>
         `,
         edu: `
             <p class="greeting">การศึกษา</p>
