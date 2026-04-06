@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contact: `
             <p class="greeting">ติดต่อ</p>
             <div class="card">
-                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> 654150114Thanasak@mail.com</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> 654150114Thanasak@gmail.com</p>
                 <p><i class="fas fa-map-pin"></i> <strong>Address:</strong> 51 หมู่ 5 ตำบลบ่อนอก อำเภอเมือง จังหวัดประจวบคีรีขันธ์ 77210 </p>
 		<p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> 080-0767-351</p>
 	</div>
