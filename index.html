@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thansak Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="profile-box">
+                <div class="avatar-container">
+                    <img src="Images/profile.jpg" alt="Profile">
+                </div>
+                <h1 class="name">ธนศักดิ์ กลิ่นมาลี</h1>
+                <p class="role">Software Developer / Designer</p>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> หน้าหลัก</a>
+                <a href="#" class="nav-link" data-page="about"><i class="fas fa-user-circle"></i> ข้อมูลส่วนตัว</a>
+                <a href="#" class="nav-link" data-page="edu"><i class="fas fa-graduation-cap"></i> การศึกษา</a>
+                <a href="#" class="nav-link" data-page="port"><i class="fas fa-layer-group"></i> แฟ้มสะสมงาน</a>
+                <a href="#" class="nav-link" data-page="contact"><i class="fas fa-paper-plane"></i> ติดต่อ</a>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <div class="bg-glow"></div>
+            <div id="dynamic-content" class="text-content">
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
