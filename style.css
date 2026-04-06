@@ -28,7 +28,6 @@ body { background-color: var(--bg-dark-vibrant); color: var(--text-vibrant-main)
 .nav-link { color: var(--text-vibrant-dim); text-decoration: none; padding: 14px 20px; border-radius: 18px; display: flex; align-items: center; gap: 12px; transition: 0.3s; }
 .nav-link.active { background: linear-gradient(45deg, var(--vibrant-secondary), var(--vibrant-primary)); color: white; box-shadow: 0 8px 20px rgba(0, 242, 254, 0.3); }
 
-/* --- เอฟเฟคเปลี่ยนหน้า --- */
 .content-area { flex: 1; padding: 50px; overflow-y: auto; transition: opacity 0.3s ease, transform 0.3s ease; }
 .fade-in { animation: fadeInAnim 0.5s ease forwards; }
 @keyframes fadeInAnim {
@@ -39,11 +38,24 @@ body { background-color: var(--bg-dark-vibrant); color: var(--text-vibrant-main)
 .greeting { font-size: 3rem; font-weight: 700; margin-bottom: 15px; }
 .card { background: rgba(15, 23, 42, 0.5); padding: 30px; border-radius: 25px; border: 1px solid var(--glass-border-vibrant); margin-top: 25px; line-height: 1.8; }
 
-/* Modal */
+/* --- Modal ปรับปรุงใหม่ --- */
 .modal { display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(5, 8, 26, 0.98); backdrop-filter: blur(15px); justify-content: center; align-items: center; padding: 20px; }
-.modal-close-zone { position: absolute; top: 25px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; width: 55px; height: 55px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.modal-close-zone { position: absolute; top: 25px; right: 25px; color: #fff; font-size: 35px; cursor: pointer; width: 55px; height: 55px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10000; }
 
-/* Responsive */
+.modal-content { 
+    max-width: 90vw; 
+    max-height: 85vh; 
+    object-fit: contain; 
+    border-radius: 15px; 
+    box-shadow: 0 0 50px rgba(0, 242, 254, 0.4);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 @media (max-width: 900px) {
     .app-container { flex-direction: column; height: 100vh; width: 100%; border-radius: 0; }
     .sidebar { width: 100%; padding: 20px; border-right: none; border-bottom: 1px solid var(--glass-border-vibrant); }
