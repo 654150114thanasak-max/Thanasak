@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="greeting">แฟ้มสะสมงาน</p>
             <p style="color: #94a3b8; margin-bottom: 10px;">(คลิกที่รูปเพื่อขยายใหญ่)</p>
             <div class="port-grid">
-                <div class="port-item"><img src="Images/work1.jpg"></div>
-                <div class="port-item"><img src="Images/work2.jpg"></div>
-                <div class="port-item"><img src="Images/work3.jpg"></div>
-                <div class="port-item"><img src="Images/work4.jpg"></div>
-                <div class="port-item"><img src="Images/work5.jpg"></div>
-                <div class="port-item"><img src="Images/work6.jpg"></div>
-                <div class="port-item"><img src="Images/work7.jpg"></div>
+                <div class="port-item"><img src="Images/work1.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work2.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work3.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work4.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work5.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work6.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work7.jpg" class="zoom-target"></div>
             </div>
         `,
         contact: `
@@ -62,20 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- ระบบคลิกดูรูปขยาย ---
+    // --- ระบบคลิกดูรูปขยาย (ปรับปรุงใหม่) ---
     document.addEventListener('click', (e) => {
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("imgFull");
 
-        // ถ้าคลิกที่รูปในคลาส port-item
-        if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
+        // 1. ตรวจสอบการคลิกที่รูปภาพ (ใช้ class zoom-target เพื่อความแม่นยำ)
+        if (e.target.classList.contains('zoom-target')) {
             modal.style.display = "flex";
             modalImg.src = e.target.src;
+            document.body.style.overflow = "hidden"; // ปิดการ scroll หน้าเว็บหลัก
         }
 
-        // ถ้าคลิกที่ปุ่มปิด หรือพื้นที่ว่าง ให้ปิด Modal
+        // 2. ตรวจสอบการคลิกเพื่อปิด (กดปุ่ม X หรือ คลิกพื้นที่สีดำข้างนอกรูป)
         if (e.target.classList.contains('close-modal') || e.target.id === 'imageModal') {
             modal.style.display = "none";
+            document.body.style.overflow = "auto"; // เปิดการ scroll หน้าเว็บตามปกติ
         }
     });
 
