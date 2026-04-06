@@ -2,8 +2,8 @@
     --vibrant-primary: #00f2fe;
     --vibrant-secondary: #4facfe;
     --vibrant-accent: #ff007f;
-    /* เปลี่ยนสีพื้นหลัง */
-    --bg-vibrant: #e0f2ff; /* หรือสีอื่นๆ ที่เลือก */
+    /* เปลี่ยนสีพื้นหลัง: ใช้โทน Navy Slate เพื่อให้สี Neon ดูแพงและไม่ล้าสายตา */
+    --bg-vibrant: #0f172a;
 }
     --sidebar-bg-vibrant: rgba(10, 15, 30, 0.9);
     --card-bg-vibrant: rgba(30, 41, 59, 0.5);
