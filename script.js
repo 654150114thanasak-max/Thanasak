@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="greeting">ข้อมูลส่วนตัว</p>
             <div class="card">
                 <p><strong>ชื่อ-นามสกุล:</strong> นายธนศักดิ์ กลิ่นมาลี</p>
+				<p><strong>ชื่อเล่น:</strong> กอล์ฟ</p>
+				<p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
+				<p><strong>:</strong> อายุ 28 ปี สัญชาติ ไทย เชื่อชาติ ไทย ศาสนา พุทธ</p>
                 <p><strong>ทักษะ:</strong> HTML, CSS, JavaScript, GitHub, Photoshop</p>
             </div>
         `,
