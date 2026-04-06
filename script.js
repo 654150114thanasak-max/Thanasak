@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">ข้อมูลส่วนตัว</p>
                 <div class="card">
+                    <p><strong>ชื่อ:</strong> นายธนศักดิ์ กลิ่นมาลี (Golf)</p>
                     <p><strong>ชื่อเล่น:</strong> กอล์ฟ (Golf)</p>
                     <p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
                     <p><strong>สัญชาติ:</strong> ไทย </p>
                     <p><strong>เชื้อชาติ:</strong> ไทย </p>
                     <p><strong>ศาสนา:</strong> พุทธ </p>
+                    <p><strong>ทักษะ และความาสามรถ:</strong> มีความอดทน และทำงานร่วมกับผู้อื่นได้อย่างดี มีความเป็นผู้นำ ใช้โปรแกรมพื้นฐานคอมพิวเตอร์ได้อย่างดี การทำงานภายใต้แรงกดดันได้ดี  สามารถเรียนรู้และพัฒนาตามคำแนะนำ </p>
                 </div>
             </div>
         `,
