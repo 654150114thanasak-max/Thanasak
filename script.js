@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
-    const contentArea = document.getElementById('dynamic-content');
+    const contentArea = document.querySelector('.content-area');
+    const dynamicContent = document.getElementById('dynamic-content');
 
     const pages = {
         home: `
@@ -15,27 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">ข้อมูลส่วนตัว</p>
                 <div class="card">
-		         <p><strong>ชื่อ:</strong>นาย ธนศักดิ์ กลิ่นมาลี</p>
                     <p><strong>ชื่อเล่น:</strong> กอล์ฟ (Golf)</p>
                     <p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
-                    <p><strong>สัญชาติ:</strong> สัญชาติ ไทย เชื่อชาติ ไทย ศาสนา พุทธ </p>
+                    <p><strong>สัญชาติ:</strong> ไทย</p>
+                </div>
             </div>
         `,
         edu: `
             <div class="fade-in">
                 <p class="greeting">การศึกษา</p>
-                <div class="card" style="margin-bottom: 20px; border-left: 5px solid var(--vibrant-primary);">
+                <div class="card" style="border-left: 5px solid var(--vibrant-primary);">
                     <p><strong>ปริญาตรี : คุรุศาสตร์บัณฑิต</strong></p>
                     <p>สาขา คอมพิวเตอร์</p>
                     <p>เกรดเฉลี่ยน 3.50</p>
                     <p>เกียรตินิยมอันดับ 2</p>
-                    <p style="color: var(--vibrant-primary);">มหาวิทยาลัยราชภัฏเพชรบุรี</p>
+                    <p style="color:var(--vibrant-primary)">มหาวิทยาลัยราชภัฏเพชรบุรี</p>
                 </div>
-                <div class="card" style="border-left: 5px solid var(--vibrant-accent);">
+                <div class="card" style="margin-top:20px; border-left: 5px solid var(--vibrant-accent);">
                     <p><strong>ปริญาตรี : ศิลปศาสตร์บัณฑิต</strong></p>
                     <p>สาขาการพัฒนาชุมชน</p>
                     <p>เกรดเฉลี่ย 2.51</p>
-                    <p style="color: var(--vibrant-accent);">มหาวิทยาลัยราชภัฏเพชรบุรี</p>
+                    <p style="color:var(--vibrant-accent)">มหาวิทยาลัยราชภัฏเพชรบุรี</p>
                 </div>
             </div>
         `,
@@ -47,10 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="port-item"><img src="Images/work2.jpg"></div>
                     <div class="port-item"><img src="Images/work3.jpg"></div>
                     <div class="port-item"><img src="Images/work4.jpg"></div>
-		        <div class="port-item"><img src="Images/work5.jpg"></div>
- 					<div class="port-item"><img src="Images/work6.jpg"></div>
- 					<div class="port-item"><img src="Images/work7.jpg"></div>
-		        <div class="port-item"><img src="Images/work8.jpg"></div>
                 </div>
             </div>
         `,
@@ -66,16 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function changePage(pageId) {
+        // เริ่มเอฟเฟคหายไป
         contentArea.style.opacity = '0';
+        contentArea.style.transform = 'translateY(-10px)';
+
         setTimeout(() => {
-            contentArea.innerHTML = pages[pageId] || pages['home'];
+            dynamicContent.innerHTML = pages[pageId] || pages['home'];
+            // เอฟเฟคปรากฏขึ้น
             contentArea.style.opacity = '1';
-        }, 200);
+            contentArea.style.transform = 'translateY(0)';
+        }, 300);
     }
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            if(link.classList.contains('active')) return;
+            
             const pageId = link.getAttribute('data-page');
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
@@ -83,16 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modal System: เปิดเมื่อคลิกรูป ปิดเมื่อคลิก x หรือ พื้นหลัง
+    // Modal
     document.addEventListener('click', (e) => {
         const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("imgFull");
-
         if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
             modal.style.display = "flex";
-            modalImg.src = e.target.src;
+            document.getElementById("imgFull").src = e.target.src;
         }
-
         if (e.target.closest('#modalClose') || e.target.id === 'imageModal') {
             modal.style.display = "none";
         }
