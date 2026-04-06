@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="port-item"><img src="Images/work5.jpg" class="zoom-target"></div>
                 <div class="port-item"><img src="Images/work6.jpg" class="zoom-target"></div>
                 <div class="port-item"><img src="Images/work7.jpg" class="zoom-target"></div>
+                <div class="port-item"><img src="Images/work8.jpg" class="zoom-target"></div>
             </div>
         `,
         contact: `
