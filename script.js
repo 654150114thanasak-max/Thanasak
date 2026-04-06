@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         port: `
             <p class="greeting">แฟ้มสะสมงาน</p>
-            <p style="color: #94a3b8; margin-bottom: 10px;">(คลิกที่รูปเพื่อขยายใหญ่)</p>
+            <p style="color: #94a3b8; margin-bottom: 10px;">(CER)</p>
             <div class="port-grid">
                 <div class="port-item"><img src="Images/work1.jpg"></div>
                 <div class="port-item"><img src="Images/work2.jpg"></div>
