@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
-                    <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม ในฐานะ <strong>Software Developer / Designer</strong></p>
+                    <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม </strong></p>
                 </div>
             </div>
         `,
@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="card">
                     <p><strong>ชื่อเล่น:</strong> กอล์ฟ (Golf)</p>
                     <p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
-                    <p><strong>สัญชาติ:</strong> ไทย</p>
+                    <p><strong>สัญชาติ:</strong>ไทย </p>
+                    <p><strong>เชื้อชาติ:</strong>ไทย </p>
+                    <p><strong>ศาสนา:</strong> พุทธ </p>
                 </div>
             </div>
         `,
