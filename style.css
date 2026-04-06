@@ -1,7 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
 }
 
@@ -9,144 +7,75 @@ body {
     background-color: #0f172a;
     color: #f8fafc;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; justify-content: center; align-items: center;
     overflow: hidden;
 }
+
+/* ซ่อนสโครลบาร์ */
+.content-area::-webkit-scrollbar { display: none; }
 
 .app-container {
     display: flex;
-    width: 95%;
-    max-width: 1200px;
-    height: 90vh;
+    width: 95%; max-width: 1150px;
+    height: 85vh;
     background: #1e293b;
-    border-radius: 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
     overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Sidebar Styling */
 .sidebar {
-    width: 280px;
-    background: #0f172a;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    width: 280px; background: #0b1120;
+    padding: 40px 20px; display: flex; flex-direction: column;
 }
 
-.profile-box {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
+.avatar-container { margin-bottom: 20px; text-align: center; }
 .avatar-container img {
-    width: 120px;
-    height: 120px;
-    border-radius: 30px; /* ทรงเหลี่ยมมนดูทันสมัยกว่าวงกลม */
-    object-fit: cover;
-    border: 3px solid #3b82f6;
-    margin-bottom: 15px;
+    width: 120px; height: 120px; border-radius: 25px;
+    object-fit: cover; border: 2px solid #3b82f6; padding: 3px;
 }
 
-.name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-}
+.name { font-size: 1.1rem; text-align: center; margin-bottom: 5px; }
+.role { font-size: 0.8rem; color: #64748b; text-align: center; margin-bottom: 40px; }
 
-.role {
-    font-size: 0.85rem;
-    color: #94a3b8;
-}
-
-.side-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
+.side-nav { display: flex; flex-direction: column; gap: 8px; }
 .nav-link {
-    color: #94a3b8;
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-link i { width: 20px; }
-
-.nav-link:hover, .nav-link.active {
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
-}
-
-.nav-link.active {
-    background: #3b82f6;
-    color: white;
-}
-
-/* Content Area */
-.content-area {
-    flex: 1;
-    padding: 60px;
-    position: relative;
-    background: #1e293b;
-    overflow-y: auto;
-}
-
-.bg-glow {
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-    z-index: 0;
-}
-
-.text-content {
-    position: relative;
-    z-index: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.greeting {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    background: linear-gradient(to right, #3b82f6, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.info-grid {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 25px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-.action-btn {
-    padding: 12px 28px;
-    background: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-weight: 500;
-    cursor: pointer;
+    color: #94a3b8; text-decoration: none;
+    padding: 12px 18px; border-radius: 12px;
+    display: flex; align-items: center; gap: 12px;
     transition: 0.3s;
 }
 
-.action-btn:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+.nav-link:hover, .nav-link.active {
+    background: rgba(59, 130, 246, 0.1); color: #3b82f6;
 }
+
+.nav-link.active { background: #3b82f6; color: white; }
+
+.content-area {
+    flex: 1; padding: 50px; position: relative;
+    overflow-y: auto; scrollbar-width: none;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.5); padding: 25px;
+    border-radius: 20px; border: 1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px); line-height: 1.8; margin-top: 20px;
+}
+
+.greeting { font-size: 2.2rem; font-weight: 600; color: #3b82f6; }
+
+/* Grid แสดงใบประกาศนียบัตร */
+.port-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; margin-top: 20px;
+}
+
+.port-item img {
+    width: 100%; border-radius: 10px;
+    transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
+}
+
+.port-item img:hover { transform: scale(1.05); border-color: #3b82f6; }
