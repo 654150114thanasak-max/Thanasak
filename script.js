@@ -1,90 +1,101 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const contentArea = document.getElementById('dynamic-content');
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
 
-    // 1. ข้อมูลหน้าต่างๆ
-    const pages = {
-        home: `
-            <p class="greeting">สวัสดีครับ</p>
-            <div class="card">
-                <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม <strong>ธนศักดิ์ กลิ่นมาลี</strong> ผมมีความมุ่งมั่นที่จะพัฒนาทักษะด้าน Software และการออกแบบให้ดียิ่งขึ้นในทุกๆ วัน</p>
-            </div>
-        `,
-        about: `
-            <p class="greeting">ข้อมูลส่วนตัว</p>
-            <div class="card">
-                <p><strong>ชื่อ-นามสกุล:</strong> นายธนศักดิ์ กลิ่นมาลี</p>
-                <p><strong>ตำแหน่ง:</strong> Software Developer / Designer</p>
-                <p><strong>ทักษะ:</strong> HTML, CSS, JavaScript, GitHub, Photoshop</p>
-            </div>
-        `,
-        edu: `
-            <p class="greeting">การศึกษา</p>
-            <div class="card">
-                <p><i class="fas fa-university"></i> <strong>ระดับปริญญาตรี:</strong> มหาวิทยาลัยราชภัฏเพชรบุรี</p>
-                <p><i class="fas fa-school"></i> <strong>ระดับมัธยมศึกษา:</strong> โรงเรียนที่ท่านจบการศึกษา</p>
-            </div>
-        `,
-        port: `
-            <p class="greeting">แฟ้มสะสมงาน</p>
-            <p style="color: #94a3b8; margin-bottom: 15px;">(คลิกที่รูปเพื่อดูขนาดใหญ่)</p>
-            <div class="port-grid">
-                <div class="port-item"><img src="Images/work1.jpg" alt="ใบประกาศ 1"></div>
-                <div class="port-item"><img src="Images/work2.jpg" alt="ใบประกาศ 2"></div>
-                <div class="port-item"><img src="Images/work3.jpg" alt="ใบประกาศ 3"></div>
-                <div class="port-item"><img src="Images/work4.jpg" alt="ใบประกาศ 4"></div>
-                <div class="port-item"><img src="Images/work5.jpg" alt="ใบประกาศ 5"></div>
-                <div class="port-item"><img src="Images/work6.jpg" alt="ใบประกาศ 6"></div>
-                <div class="port-item"><img src="Images/work7.jpg" alt="ใบประกาศ 7"></div>
-            </div>
-        `,
-        contact: `
-            <p class="greeting">ติดต่อ</p>
-            <div class="card">
-                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thansak.k@email.com</p>
-                <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> Thansak Klinmalee</p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>ที่อยู่:</strong> จังหวัดเพชรบุรี, ประเทศไทย</p>
-            </div>
-        `
-    };
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+}
 
-    // 2. ฟังก์ชันเปลี่ยนหน้า
-    function changePage(pageId) {
-        contentArea.style.opacity = '0';
-        setTimeout(() => {
-            contentArea.innerHTML = pages[pageId] || pages['home'];
-            contentArea.style.opacity = '1';
-        }, 200);
-    }
+/* ซ่อน Scrollbar */
+.content-area::-webkit-scrollbar { display: none; }
 
-    // 3. ระบบเมนูคลิก
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pageId = link.getAttribute('data-page');
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            changePage(pageId);
-        });
-    });
+.app-container {
+    display: flex;
+    width: 95%; max-width: 1150px;
+    height: 85vh;
+    background: #1e293b;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
 
-    // 4. ระบบคลิกดูรูปขยาย (Image Modal)
-    document.addEventListener('click', (e) => {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("imgFull");
+.sidebar {
+    width: 280px; background: #0b1120;
+    padding: 40px 20px; display: flex; flex-direction: column;
+}
 
-        // ถ้าคลิกที่รูปภาพในหน้า Portfolio
-        if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
-            modal.style.display = "flex"; // ใช้ flex เพื่อจัดกลางหน้าจอ
-            modalImg.src = e.target.src;
-        }
+.avatar-container { margin-bottom: 20px; text-align: center; }
+.avatar-container img {
+    width: 120px; height: 120px; border-radius: 25px;
+    object-fit: cover; border: 2px solid #3b82f6; padding: 3px;
+}
 
-        // ถ้าคลิกที่ปุ่มปิด หรือ พื้นที่ว่างข้างนอกรูป ให้ปิดหน้าต่างขยาย
-        if (e.target.classList.contains('close-modal') || e.target.id === 'imageModal') {
-            modal.style.display = "none";
-        }
-    });
+.name { font-size: 1.1rem; text-align: center; margin-bottom: 5px; }
+.role { font-size: 0.8rem; color: #64748b; text-align: center; margin-bottom: 40px; }
 
-    // โหลดหน้าแรกตอนเริ่มต้น
-    changePage('home');
-});
+.side-nav { display: flex; flex-direction: column; gap: 8px; }
+.nav-link {
+    color: #94a3b8; text-decoration: none;
+    padding: 12px 18px; border-radius: 12px;
+    display: flex; align-items: center; gap: 12px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(59, 130, 246, 0.1); color: #3b82f6;
+}
+
+.nav-link.active { background: #3b82f6; color: white; }
+
+.content-area {
+    flex: 1; padding: 50px; position: relative;
+    overflow-y: auto; scrollbar-width: none;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.5); padding: 25px;
+    border-radius: 20px; border: 1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px); line-height: 1.8; margin-top: 20px;
+}
+
+.greeting { font-size: 2.2rem; font-weight: 600; color: #3b82f6; }
+
+/* Port Grid */
+.port-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; margin-top: 20px;
+}
+
+.port-item img {
+    width: 100%; border-radius: 10px; cursor: pointer;
+    transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);
+}
+
+.port-item img:hover { transform: scale(1.05); border-color: #3b82f6; }
+
+/* Modal System */
+.modal {
+    display: none; position: fixed; z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center; align-items: center;
+}
+
+.modal-content {
+    max-width: 85%; max-height: 85vh;
+    border-radius: 10px; animation: zoom 0.3s;
+}
+
+@keyframes zoom { from {transform:scale(0.8); opacity:0} to {transform:scale(1); opacity:1} }
+
+.close-modal {
+    position: absolute; top: 20px; right: 30px;
+    color: #fff; font-size: 40px; cursor: pointer;
+}
