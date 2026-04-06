@@ -4,68 +4,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pages = {
         home: `
-            <p class="greeting">สวัสดีครับ !</p>
-            <div class="info-grid">
-                <strong>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม</strong><br>
-                ผมชื่อ ธนศักดิ์ กลิ่นมาลี กำลังพัฒนาทักษะด้าน Web Development 
-                และชอบสร้างสรรค์ประสบการณ์ใหม่ๆ บนหน้าเว็บครับ
+            <p class="greeting">สวัสดีครับ</p>
+            <div class="card">
+                <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม <strong>ธนศักดิ์ กลิ่นมาลี</strong> ผมมีความมุ่งมั่นที่จะพัฒนาทักษะด้าน Software และการออกแบบให้ดียิ่งขึ้นในทุกๆ วัน</p>
             </div>
-            <button class="action-btn">ดาวน์โหลด Resume</button>
         `,
         about: `
             <p class="greeting">ข้อมูลส่วนตัว</p>
-            <div class="info-grid">
+            <div class="card">
                 <p><strong>ชื่อ-นามสกุล:</strong> นายธนศักดิ์ กลิ่นมาลี</p>
-                <p><strong>ชื่อเล่น:</strong> (ใส่ชื่อเล่น)</p>
-                <p><strong>เป้าหมาย:</strong> อยากเป็น Full-stack Developer ที่เก่งกาจ!</p>
+                <p><strong>ตำแหน่ง:</strong> Software Developer / Designer</p>
+                <p><strong>ทักษะ:</strong> HTML, CSS, JavaScript, GitHub, Photoshop</p>
             </div>
         `,
         edu: `
             <p class="greeting">การศึกษา</p>
-            <div class="info-grid">
-                <p><strong>มหาวิทยาลัย:</strong> ระบุชื่อสถานศึกษาของคุณ</p>
-                <p><strong>สาขา:</strong> ระบุคณะหรือสาขาวิชา</p>
-                <p><strong>ปีที่จบ:</strong> 25XX</p>
+            <div class="card">
+                <p><i class="fas fa-university"></i> <strong>ระดับปริญญาตรี:</strong> [ระบุชื่อมหาวิทยาลัยของคุณ]</p>
+                <p><i class="fas fa-school"></i> <strong>ระดับมัธยมศึกษา:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
             </div>
         `,
         port: `
-            <p class="greeting">ผลงานของผม</p>
-            <div class="info-grid">
-                <p>กำลังรวบรวมโปรเจกต์ที่น่าสนใจ...</p>
-                <ul>
-                    <li>Project A: Website Portfolio</li>
-                    <li>Project B: UI Design Concept</li>
-                </ul>
+            <p class="greeting">แฟ้มสะสมงาน</p>
+            <div class="port-grid">
+                <div class="port-item"><img src="Images/work1.jpg"></div>
+                <div class="port-item"><img src="Images/work2.jpg"></div>
+                <div class="port-item"><img src="Images/work3.jpg"></div>
+                <div class="port-item"><img src="Images/work4.jpg"></div>
+                <div class="port-item"><img src="Images/work5.jpg"></div>
+                <div class="port-item"><img src="Images/work6.jpg"></div>
+                <div class="port-item"><img src="Images/work7.jpg"></div>
             </div>
         `,
         contact: `
-            <p class="greeting">ข้อมูลการติดต่อ</p>
-            <div class="info-grid">
-                <p><i class="fas fa-envelope"></i> Email: thansak.k@email.com</p>
-                <p><i class="fas fa-phone"></i> เบอร์โทร: 0xx-xxx-xxxx</p>
-                <p><i class="fab fa-github"></i> GitHub: github.com/thansak</p>
+            <p class="greeting">ติดต่อ</p>
+            <div class="card">
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thansak.k@email.com</p>
+                <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> Thansak Klinmalee</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>ที่อยู่:</strong> จังหวัดเพชรบุรี, ประเทศไทย</p>
             </div>
         `
     };
+
+    function changePage(pageId) {
+        contentArea.style.opacity = '0';
+        setTimeout(() => {
+            contentArea.innerHTML = pages[pageId] || pages['home'];
+            contentArea.style.opacity = '1';
+        }, 200);
+    }
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
-
-            // เปลี่ยนสถานะ Active
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
-
-            // เอฟเฟกต์เปลี่ยนเนื้อหา
-            contentArea.style.opacity = '0';
-            contentArea.style.transform = 'translateY(10px)';
-
-            setTimeout(() => {
-                contentArea.innerHTML = pages[pageId];
-                contentArea.style.opacity = '1';
-                contentArea.style.transform = 'translateY(0)';
-            }, 300);
+            changePage(pageId);
         });
     });
+
+    changePage('home');
 });
