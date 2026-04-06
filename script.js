@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="port-item"><img src="Images/work2.jpg"></div>
                     <div class="port-item"><img src="Images/work3.jpg"></div>
                     <div class="port-item"><img src="Images/work4.jpg"></div>
+                    <div class="port-item"><img src="Images/work5.jpg"></div>
+                    <div class="port-item"><img src="Images/work6.jpg"></div>
+                    <div class="port-item"><img src="Images/work7.jpg"></div>
+                    <div class="port-item"><img src="Images/work8.jpg"></div>
                 </div>
             </div>
         `,
