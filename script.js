@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
-                    <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม </strong></p>
+                    <p>ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม</p>
                 </div>
             </div>
         `,
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="card">
                     <p><strong>ชื่อเล่น:</strong> กอล์ฟ (Golf)</p>
                     <p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
-                    <p><strong>สัญชาติ:</strong>ไทย </p>
-                    <p><strong>เชื้อชาติ:</strong>ไทย </p>
+                    <p><strong>สัญชาติ:</strong> ไทย </p>
+                    <p><strong>เชื้อชาติ:</strong> ไทย </p>
                     <p><strong>ศาสนา:</strong> พุทธ </p>
                 </div>
             </div>
@@ -69,13 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function changePage(pageId) {
-        // เริ่มเอฟเฟคหายไป
         contentArea.style.opacity = '0';
         contentArea.style.transform = 'translateY(-10px)';
 
         setTimeout(() => {
             dynamicContent.innerHTML = pages[pageId] || pages['home'];
-            // เอฟเฟคปรากฏขึ้น
             contentArea.style.opacity = '1';
             contentArea.style.transform = 'translateY(0)';
         }, 300);
@@ -93,15 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modal
+    // Modal System (ปรับปรุงล็อค Scroll)
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgFull");
+
     document.addEventListener('click', (e) => {
-        const modal = document.getElementById("imageModal");
         if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
             modal.style.display = "flex";
-            document.getElementById("imgFull").src = e.target.src;
+            modalImg.src = e.target.src;
+            document.body.style.overflow = 'hidden'; // ล็อคหน้าจอ
         }
         if (e.target.closest('#modalClose') || e.target.id === 'imageModal') {
             modal.style.display = "none";
+            document.body.style.overflow = ''; // ปลดล็อคหน้าจอ
         }
     });
 
