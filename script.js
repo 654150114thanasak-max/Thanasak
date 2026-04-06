@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><i class="fas fa-school"></i> <strong>ระดับมัธยมศึกษา:</strong> [ระบุชื่อโรงเรียนของคุณ]</p>
             </div>
         `,
-        port: `
+       port: `
             <p class="greeting">แฟ้มสะสมงาน</p>
             <div class="port-grid">
                 <div class="port-item"><img src="Images/work1.jpg"></div>
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="port-item"><img src="Images/work6.jpg"></div>
                 <div class="port-item"><img src="Images/work7.jpg"></div>
             </div>
+        `,
         `,
         contact: `
             <p class="greeting">ติดต่อ</p>
