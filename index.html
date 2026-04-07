@@ -25,7 +25,19 @@
                 <a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> หน้าหลัก</a>
                 <a href="#" class="nav-link" data-page="about"><i class="fas fa-user-circle"></i> ข้อมูลส่วนตัว</a>
                 <a href="#" class="nav-link" data-page="edu"><i class="fas fa-graduation-cap"></i> การศึกษา</a>
-                <a href="#" class="nav-link" data-page="port"><i class="fas fa-layer-group"></i> แฟ้มสะสมงาน</a>
+
+                <!-- ✅ แก้ตรงนี้ -->
+                <a href="#" class="nav-link has-sub" id="portBtn">
+                    <span><i class="fas fa-layer-group"></i> certificate </span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <div class="submenu" id="portSubmenu">
+                    <a href="#" class="sub-link" data-page="port1">เกษตรอัจฉริยะ</a>
+                    <a href="#" class="sub-link" data-page="port2">CEFR</a>
+                    <a href="#" class="sub-link" data-page="port3">PBRU</a>
+                </div>
+                <!-- ✅ จบ -->
+
                 <a href="#" class="nav-link" data-page="contact"><i class="fas fa-paper-plane"></i> ติดต่อ</a>
             </nav>
         </aside>
