@@ -67,5 +67,56 @@ body { background-color: var(--bg-dark-vibrant); color: var(--text-vibrant-main)
 }
 
 .port-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 25px; }
-.port-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 18px; cursor: pointer; transition: 0.4s; }
+.port-item img { width: 100%; height: 180px; object-fit: contain; border-radius: 20px; cursor: pointer; transition: 0.4s; }
 .port-item img:hover { transform: scale(1.05); }
+/* ===== SUBMENU (เพิ่มใหม่ ไม่ยุ่งของเดิม) ===== */
+
+.has-sub {
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.has-sub span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* เมนูย่อย */
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+/* ลิงก์ย่อย */
+.sub-link {
+    color: var(--text-vibrant-dim);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    transition: 0.25s;
+}
+
+/* hover */
+.sub-link:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-vibrant-main);
+}
+
+/* ตอนเปิด */
+.submenu.show {
+    display: flex;
+}
+
+/* หมุนลูกศร */
+.rotate {
+    transform: rotate(180deg);
+}
