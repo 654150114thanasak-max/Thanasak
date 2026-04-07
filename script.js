@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentArea = document.querySelector('.content-area');
     const dynamicContent = document.getElementById('dynamic-content');
 
+    const portBtn = document.getElementById("portBtn");
+    const submenu = document.getElementById("portSubmenu");
+    const arrow = portBtn ? portBtn.querySelector(".arrow") : null;
+
     const pages = {
         home: `
             <div class="fade-in">
@@ -47,17 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         port: `
             <div class="fade-in">
                 <p class="greeting">แฟ้มสะสมงาน</p>
-                <div class="port-grid">
-                    <div class="port-item"><img src="Images/work1.jpg"></div>
-                    <div class="port-item"><img src="Images/work2.jpg"></div>
-                    <div class="port-item"><img src="Images/work3.jpg"></div>
-                    <div class="port-item"><img src="Images/work4.jpg"></div>
-                    <div class="port-item"><img src="Images/work5.jpg"></div>
-                    <div class="port-item"><img src="Images/work6.jpg"></div>
-                    <div class="port-item"><img src="Images/work7.jpg"></div>
-                    <div class="port-item"><img src="Images/work8.jpg"></div>
-                </div>
-            </div>
+      
         `,
         contact: `
             <div class="fade-in">
@@ -67,6 +61,83 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><strong>Phone:</strong> 080-0767-351</p>
                 </div>
             </div>
+        `,
+
+        // =========================
+        // 🔥 พื้นที่ผลงานย่อย (ใส่รูปเองตรงนี้)
+        // =========================
+
+        port1: `
+        <div class="fade-in">
+            <p class="greeting"> เกษตรอัจฉริยะ </p>
+
+            <div class="port-grid">
+
+                <!-- 🔽 ใส่รูปตรงนี้ -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work2.jpg"></div>
+                    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+                <!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work3.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+		<!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work4.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+
+            </div>
+        </div>
+        `,
+
+        port2: `
+        <div class="fade-in">
+            <p class="greeting">ผลงานที่ 2</p>
+
+            <div class="port-grid">
+
+		<!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work6.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+		<!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work7.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+            </div>
+        </div>
+        `,
+
+        port3: `
+        <div class="fade-in">
+            <p class="greeting">PBRU</p>
+
+            <div class="port-grid">
+
+		<!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work1.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+		<!-- 🔽 ใส่เพิ่ม -->
+                <div class="port-item">
+                    <div class="port-item"><img src="Images/work5.jpg"></div>
+		    <p style="margin-top:8px;">คำอธิบายรูป</p>
+                </div>
+
+            </div>
+        </div>
         `
     };
 
@@ -84,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            if (link.id === "portBtn") return;
             if(link.classList.contains('active')) return;
             
             const pageId = link.getAttribute('data-page');
@@ -93,7 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modal System (ปรับปรุงล็อค Scroll)
+    if (portBtn) {
+        portBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            submenu.classList.toggle("show");
+            if (arrow) arrow.classList.toggle("rotate");
+        });
+    }
+
+    document.querySelectorAll(".sub-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const pageId = this.getAttribute("data-page");
+            changePage(pageId);
+            navLinks.forEach(l => l.classList.remove('active'));
+        });
+    });
+
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("imgFull");
 
@@ -101,11 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.tagName === 'IMG' && e.target.closest('.port-item')) {
             modal.style.display = "flex";
             modalImg.src = e.target.src;
-            document.body.style.overflow = 'hidden'; // ล็อคหน้าจอ
+            document.body.style.overflow = 'hidden';
         }
         if (e.target.closest('#modalClose') || e.target.id === 'imageModal') {
             modal.style.display = "none";
-            document.body.style.overflow = ''; // ปลดล็อคหน้าจอ
+            document.body.style.overflow = '';
         }
     });
 
