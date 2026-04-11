@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
-                    <p style="font-size: 1.2rem; letter-spacing: 0.5px;">ยินดีต้อนรับสู่พอร์ตโฟลิโอของผม</p>
+                    <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความมุ่งมั่นในการทำงานด้านไอทีซัพพอร์ตและธุรการ เป็นผู้มีความรู้ความสามารถในการ ประกอบคอมพิวเตอร์และซ่อมบำรุง ตรวจเช็คอาการเบื้องต้น สามารถใช้งานโปรแกรมพื้นฐาน Word, Excel, PowerPoint และ Canva ได้อย่างคล่องตัว รวมถึงการใช้เครื่องมือการสอนออนไลน์อย่าง Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงกดดันได้ดี</p>
                 </div>
             </div>
         `,
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // รายหมวดหมู่ใบประกาศ (Certificates)
         port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="Images/work2.jpg"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="Images/work3.jpg"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="Images/work4.jpg"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
         port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="Images/work6.jpg"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="Images/work7.jpg"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
-        port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg"><p>ผลงาน PBRU 2</p></div></div></div>`,
+	port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="Images/work13.jpg"><p>ผลงาน PBRU 3</p></div></div></div>`,
         port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="Images/work11.jpg"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="Images/work12.jpg"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
         port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="Images/work10.jpg"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
     };
