@@ -13,17 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const submenu = document.getElementById("portSubmenu");
     const arrow = portBtn ? portBtn.querySelector(".arrow") : null;
 
-    // --- 2. คลังข้อมูลเนื้อหาแต่ละหน้า (คงข้อมูลเดิมครบถ้วน) ---
+    // --- 2. คลังข้อมูลเนื้อหาแต่ละหน้า (ห้ามตัด/ห้ามลบ ข้อมูลเดิมอยู่ครบ) ---
     const pages = {
         // หน้าหลัก
         home: `
             <div class="fade-in">
                 <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
-                    <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความสนใจการทำงานด้านไอทีซัพพอร์ต 
-                    มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
-                    รวมถึงการใช้เครื่องมือการสอนออนไลน์ Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง 
-                    มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงกดดันได้ดี</p>
+                    <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความมุ่งมั่นในการทำงานด้านไอทีซัพพอร์ตและธุรการ เป็นผู้มีความรู้ความสามารถในการ ประกอบคอมพิวเตอร์และซ่อมบำรุง ตรวจเช็คอาการเบื้องต้น สามารถใช้งานโปรแกรมพื้นฐาน Word, Excel, PowerPoint และ Canva ได้อย่างคล่องตัว รวมถึงการใช้เครื่องมือการสอนออนไลน์อย่าง Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงกดดันได้ดี</p>
                 </div>
             </div>
         `,
@@ -37,10 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><strong>วันเกิด:</strong> 28 พฤศจิกายน 2541</p>
                     <p><strong>สัญชาติ:</strong> ไทย | <strong>เชื้อชาติ:</strong> ไทย | <strong>ศาสนา:</strong> พุทธ</p>
                     <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--glass-border-vibrant);">
-                    <p><strong>ประวัติการทำงาน:</strong></p>
+                    <p><strong>ทักษะและความสามารถ:</strong></p>
                     <ul style="list-style: none; padding-left: 5px; margin-top: 12px;">
-                        <li>• ปี 2565-2567 สังเกตการณ์สอนในโรงเรียน วัดบางขุนไทร(ผดุงวิทยา)</li>
-                        <li>• ปี 2568 - 2569 ฝึกประสบการณ์สอนขั้นเต็มรูปแบบ ในรายวิชา วิทยาการคำนวณ และเทคโนโลยี ระดับชั้น ประถมศึกษาปีที่ 3, 6 มัธยมศึกษาปีที่ 3</li>
+                        <li>• มีความอดทนและทำงานร่วมกับผู้อื่นได้อย่างดี</li>
+                        <li>• มีความเป็นผู้นำและการทำงานภายใต้แรงกดดันได้ดี</li>
+                        <li>• ใช้โปรแกรมพื้นฐานคอมพิวเตอร์ได้อย่างเชี่ยวชาญ</li>
+                        <li>• สามารถเรียนรู้และพัฒนาตามคำแนะนำได้อย่างรวดเร็ว</li>
                     </ul>
                 </div>
             </div>
@@ -67,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">ผลงาน</p>
                 <div class="port-grid">
-                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 1"><p>รอใส่</p></div>
-                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 2"><p>รอใส่</p></div>
-                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 3"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
                 </div>
             </div>
         `,
@@ -84,17 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `,
         // รายหมวดหมู่ใบประกาศ (Certificates)
-        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="Images/work2.jpg" alt="เกษตรอัจฉริยะ 1"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="Images/work3.jpg" alt="เกษตรอัจฉริยะ 2"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="Images/work4.jpg" alt="เกษตรอัจฉริยะ 3"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
-        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="Images/work6.jpg" alt="เกียรติบัตร CEFR 1"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="Images/work7.jpg" alt="เกียรติบัตร CEFR 2"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
-        port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg" alt="ผลงาน PBRU 1"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg" alt="ผลงาน PBRU 2"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="Images/work13.jpg" alt="ผลงาน PBRU 3"><p>ผลงาน PBRU 3</p></div></div></div>`,
-        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="Images/work11.jpg" alt="เกียรติบัตรลูกเสือ 1"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="Images/work12.jpg" alt="เกียรติบัตรลูกเสือ 2"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
-        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="Images/work10.jpg" alt="ภาพการฝึกประสบการณ์"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
+        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="Images/work2.jpg"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="Images/work3.jpg"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="Images/work4.jpg"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
+        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="Images/work6.jpg"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="Images/work7.jpg"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
+	port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="Images/work13.jpg"><p>ผลงาน PBRU 3</p></div></div></div>`,
+        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="Images/work11.jpg"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="Images/work12.jpg"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
+        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="Images/work10.jpg"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
     };
 
     // --- 3. ฟังก์ชันสลับหน้า (Page Transition) ---
     function changePage(pageId) {
-        if (!contentArea || !dynamicContent) return; // ป้องกัน Error หากไม่มี Element ในหน้า HTML
-
         contentArea.style.opacity = '0';
         contentArea.style.transform = 'translateY(-10px)';
 
@@ -130,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (portBtn) {
         portBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            if (submenu) submenu.classList.toggle("show");
+            submenu.classList.toggle("show");
             if (arrow) arrow.classList.toggle("rotate");
         });
     }
@@ -155,17 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const portImg = e.target.closest('.port-item img');
 
-        if (portImg && modal && modalImg) {
+        if (portImg) {
             modal.style.display = "flex";
             modalImg.src = portImg.src;
             document.body.style.overflow = 'hidden';
         }
 
         if (e.target.closest('#modalClose') || e.target.id === 'imageModal') {
-            if (modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = '';
-            }
+            modal.style.display = "none";
+            document.body.style.overflow = '';
         }
     });
 
@@ -175,16 +170,37 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            // เปลี่ยน URL ตรงนี้เมื่อนำไฟล์ขึ้น GitHub เรียบร้อยแล้ว
-            const fileUrl = 'https://raw.githubusercontent.com/ชื่อของคุณ/ชื่อโปรเจกต์/main/Resume_Thanasak.pdf'; 
-            
-            const link = document.createElement('a');
-            link.href = fileUrl;
-            link.download = 'Resume_Thanasak.pdf';
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            const resumeTemplate = `
+                <div style="padding: 40px; font-family: 'Kanit', sans-serif; color: #333; line-height: 1.6;">
+                    <div style="text-align: center; border-bottom: 2px solid #4facfe; padding-bottom: 20px;">
+                        <h1 style="margin: 0;">ธนศักดิ์ กลิ่นมาลี</h1>
+                        <p>ครูคอมพิวเตอร์ | 080-0767-351 | 654150114Thanasak@mail.com</p>
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <h3>ประวัติส่วนตัว</h3>
+                        <p>วันเกิด: 28 พฤศจิกายน 2541</p>
+                        <p>ทักษะ: ความอดทน, การทำงานร่วมกับผู้อื่น, ความเป็นผู้นำ, เรียนรู้งานไว</p>
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <h3>การศึกษา</h3>
+                        <p><strong>คุรุศาสตร์บัณฑิต (คอมพิวเตอร์)</strong> - เกรด 3.50 เกียรตินิยมอันดับ 2</p>
+                        <p><strong>ศิลปศาสตร์บัณฑิต (การพัฒนาชุมชน)</strong> - เกรด 2.51</p>
+                    </div>
+                </div>
+            `;
+
+            const options = {
+                margin: 0.5,
+                filename: 'Resume_Thanasak.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            html2pdf().from(resumeTemplate).set(options).save();
         });
     }
+
+    // เริ่มต้นที่หน้า Home
+    changePage('home');
 });
