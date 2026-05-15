@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submenu = document.getElementById("portSubmenu");
     const arrow = portBtn ? portBtn.querySelector(".arrow") : null;
 
-    // --- 2. คลังข้อมูลเนื้อหาแต่ละหน้า (ห้ามตัด/ห้ามลบ ข้อมูลเดิมอยู่ครบ) ---
+    // --- 2. คลังข้อมูลเนื้อหาแต่ละหน้า (คงข้อมูลเดิมครบถ้วน) ---
     const pages = {
         // หน้าหลัก
         home: `
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
                     <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความสนใจการทำงานด้านไอทีซัพพอร์ต 
-					มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
-					รวมถึงการใช้เครื่องมือการสอนออนไลน Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง    
-					มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงกดดันได้ดี</p>
+                    มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
+                    รวมถึงการใช้เครื่องมือการสอนออนไลน์ Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง 
+                    มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงกดดันได้ดี</p>
                 </div>
             </div>
         `,
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--glass-border-vibrant);">
                     <p><strong>ประวัติการทำงาน:</strong></p>
                     <ul style="list-style: none; padding-left: 5px; margin-top: 12px;">
-                        <li>• ปี 2565-2567 สังเกตุการสอนในโรงเรียน วัดบางขุนไทร(ผดุงวิทยา) </li>
-                        <li>• ปี2568 - 2569 ฝึกประสบกาณ์สอนขั้นเต็มรูปแบบ ในรายวิชา วิทยาการคำนวณ และเทคโนโลยี ระดับชั้น ประถมศึกษาปีที่ 3,6 มัธยมศึกษาปีที่3 </li>
+                        <li>• ปี 2565-2567 สังเกตการณ์สอนในโรงเรียน วัดบางขุนไทร(ผดุงวิทยา)</li>
+                        <li>• ปี 2568 - 2569 ฝึกประสบการณ์สอนขั้นเต็มรูปแบบ ในรายวิชา วิทยาการคำนวณ และเทคโนโลยี ระดับชั้น ประถมศึกษาปีที่ 3, 6 มัธยมศึกษาปีที่ 3</li>
                     </ul>
                 </div>
             </div>
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="fade-in">
                 <p class="greeting">ผลงาน</p>
                 <div class="port-grid">
-                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
-                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
-                    <div class="port-item"><img src="Images/work.jpg"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 1"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 2"><p>รอใส่</p></div>
+                    <div class="port-item"><img src="Images/work.jpg" alt="ผลงานเด่น 3"><p>รอใส่</p></div>
                 </div>
             </div>
         `,
@@ -84,15 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `,
         // รายหมวดหมู่ใบประกาศ (Certificates)
-        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="Images/work2.jpg"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="Images/work3.jpg"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="Images/work4.jpg"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
-        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="Images/work6.jpg"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="Images/work7.jpg"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
-	port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="Images/work13.jpg"><p>ผลงาน PBRU 3</p></div></div></div>`,
-        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="Images/work11.jpg"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="Images/work12.jpg"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
-        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="Images/work10.jpg"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
+        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="Images/work2.jpg" alt="เกษตรอัจฉริยะ 1"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="Images/work3.jpg" alt="เกษตรอัจฉริยะ 2"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="Images/work4.jpg" alt="เกษตรอัจฉริยะ 3"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
+        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="Images/work6.jpg" alt="เกียรติบัตร CEFR 1"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="Images/work7.jpg" alt="เกียรติบัตร CEFR 2"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
+        port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="Images/work1.jpg" alt="ผลงาน PBRU 1"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="Images/work8.jpg" alt="ผลงาน PBRU 2"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="Images/work13.jpg" alt="ผลงาน PBRU 3"><p>ผลงาน PBRU 3</p></div></div></div>`,
+        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="Images/work11.jpg" alt="เกียรติบัตรลูกเสือ 1"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="Images/work12.jpg" alt="เกียรติบัตรลูกเสือ 2"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
+        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="Images/work10.jpg" alt="ภาพการฝึกประสบการณ์"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
     };
 
     // --- 3. ฟังก์ชันสลับหน้า (Page Transition) ---
     function changePage(pageId) {
+        if (!contentArea || !dynamicContent) return; // ป้องกัน Error หากไม่มี Element ในหน้า HTML
+
         contentArea.style.opacity = '0';
         contentArea.style.transform = 'translateY(-10px)';
 
@@ -128,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (portBtn) {
         portBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            submenu.classList.toggle("show");
+            if (submenu) submenu.classList.toggle("show");
             if (arrow) arrow.classList.toggle("rotate");
         });
     }
@@ -153,33 +155,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const portImg = e.target.closest('.port-item img');
 
-        if (portImg) {
+        if (portImg && modal && modalImg) {
             modal.style.display = "flex";
             modalImg.src = portImg.src;
             document.body.style.overflow = 'hidden';
         }
 
         if (e.target.closest('#modalClose') || e.target.id === 'imageModal') {
-            modal.style.display = "none";
-            document.body.style.overflow = '';
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = '';
+            }
         }
     });
 
-// --- 6. ระบบ Download Resume เป็น PDF ---
-const downloadBtn = document.getElementById('downloadResume');
-if (downloadBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    // --- 6. ระบบ Download Resume เป็น PDF ---
+    const downloadBtn = document.getElementById('downloadResume');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+            e.preventDefault();
 
-        // นำลิงก์ที่ก๊อปปี้มาจากปุ่ม Download/Raw บน GitHub มาวางตรงนี้
-        const fileUrl = 'https://raw.githubusercontent.com/ชื่อของคุณ/ชื่อโปรเจกต์/main/Resume_Thanasak.pdf'; 
-        
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = 'Resume_Thanasak.pdf';
-        
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
-}
+            // เปลี่ยน URL ตรงนี้เมื่อนำไฟล์ขึ้น GitHub เรียบร้อยแล้ว
+            const fileUrl = 'https://raw.githubusercontent.com/ชื่อของคุณ/ชื่อโปรเจกต์/main/Resume_Thanasak.pdf'; 
+            
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'Resume_Thanasak.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+});
