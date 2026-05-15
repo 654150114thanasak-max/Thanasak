@@ -162,43 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 6. ระบบ Download Resume เป็น PDF ---
-    const downloadBtn = document.getElementById('downloadResume');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+// --- 6. ระบบ Download Resume เป็น PDF ---
+const downloadBtn = document.getElementById('downloadResume');
+if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-            const resumeTemplate = `
-                <div style="padding: 40px; font-family: 'Kanit', sans-serif; color: #333; line-height: 1.6;">
-                    <div style="text-align: center; border-bottom: 2px solid #4facfe; padding-bottom: 20px;">
-                        <h1 style="margin: 0;">ธนศักดิ์ กลิ่นมาลี</h1>
-                        <p>ครูคอมพิวเตอร์ | 080-0767-351 | 654150114Thanasak@mail.com</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <h3>ประวัติส่วนตัว</h3>
-                        <p>วันเกิด: 28 พฤศจิกายน 2541</p>
-                        <p>ทักษะ: ความอดทน, การทำงานร่วมกับผู้อื่น, ความเป็นผู้นำ, เรียนรู้งานไว</p>
-                    </div>
-                    <div style="margin-top: 25px;">
-                        <h3>การศึกษา</h3>
-                        <p><strong>คุรุศาสตร์บัณฑิต (คอมพิวเตอร์)</strong> - เกรด 3.50 เกียรตินิยมอันดับ 2</p>
-                        <p><strong>ศิลปศาสตร์บัณฑิต (การพัฒนาชุมชน)</strong> - เกรด 2.51</p>
-                    </div>
-                </div>
-            `;
-
-            const options = {
-                margin: 0.5,
-                filename: 'Resume_Thanasak.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-
-            html2pdf().from(resumeTemplate).set(options).save();
-        });
-    }
-
-    // เริ่มต้นที่หน้า Home
-    changePage('home');
-});
+        // นำลิงก์ที่ก๊อปปี้มาจากปุ่ม Download/Raw บน GitHub มาวางตรงนี้
+        const fileUrl = 'https://raw.githubusercontent.com/ชื่อของคุณ/ชื่อโปรเจกต์/main/Resume_Thanasak.pdf'; 
+        
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = 'Resume_Thanasak.pdf';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
