@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // หน้าหลัก
         home: `
             <div class="fade-in">
-                <p class="greeting">สวัสดีครับ</p>
+                <p class="greeting">สวัสดีครับ 👋</p>
                 <div class="card">
                     <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความสนใจการทำงานด้านไอทีซัพพอร์ต 
                     มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
@@ -84,11 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `,
         // รายหมวดหมู่ใบประกาศ (Certificates)
-        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="work2.jpg" alt="เกษตรอัจฉริยะ 1"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="work3.jpg" alt="เกษตรอัจฉริยะ 2"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="work4.jpg" alt="เกษตรอัจฉริยะ 3"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
-        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="work6.jpg" alt="เกียรติบัตร CEFR 1"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="work7.jpg" alt="เกียรติบัตร CEFR 2"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
-        port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="work1.jpg" alt="ผลงาน PBRU 1"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="work8.jpg" alt="ผลงาน PBRU 2"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="work13.jpg" alt="ผลงาน PBRU 3"><p>ผลงาน PBRU 3</p></div></div></div>`,
-        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="work11.jpg" alt="เกียรติบัตรลูกเสือ 1"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="work12.jpg" alt="เกียรติบัตรลูกเสือ 2"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
-        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="work10.jpg" alt="ภาพการฝึกประสบการณ์"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
+        port1: `<div class="fade-in"><p class="greeting">เกษตรอัจฉริยะ</p><div class="port-grid"><div class="port-item"><img src="images/work2.jpg" alt="เกษตรอัจฉริยะ 1"><p>เกษตรอัจฉริยะ 1</p></div><div class="port-item"><img src="images/work3.jpg" alt="เกษตรอัจฉริยะ 2"><p>เกษตรอัจฉริยะ 2</p></div><div class="port-item"><img src="images/work4.jpg" alt="เกษตรอัจฉริยะ 3"><p>เกษตรอัจฉริยะ 3</p></div></div></div>`,
+        port2: `<div class="fade-in"><p class="greeting">CEFR</p><div class="port-grid"><div class="port-item"><img src="images/work6.jpg" alt="เกียรติบัตร CEFR 1"><p>เกียรติบัตร CEFR 1</p></div><div class="port-item"><img src="images/work7.jpg" alt="เกียรติบัตร CEFR 2"><p>เกียรติบัตร CEFR 2</p></div></div></div>`,
+        port3: `<div class="fade-in"><p class="greeting">PBRU</p><div class="port-grid"><div class="port-item"><img src="images/work1.jpg" alt="ผลงาน PBRU 1"><p>ผลงาน PBRU 1</p></div><div class="port-item"><img src="images/work8.jpg" alt="ผลงาน PBRU 2"><p>ผลงาน PBRU 2</p></div><div class="port-item"><img src="images/work13.jpg" alt="ผลงาน PBRU 3"><p>ผลงาน PBRU 3</p></div></div></div>`,
+        port4: `<div class="fade-in"><p class="greeting">วุฒิทางลูกเสือ</p><div class="port-grid"><div class="port-item"><img src="images/work11.jpg" alt="เกียรติบัตรลูกเสือ 1"><p>เกียรติบัตรลูกเสือ 1</p></div><div class="port-item"><img src="images/work12.jpg" alt="เกียรติบัตรลูกเสือ 2"><p>เกียรติบัตรลูกเสือ 2</p></div></div></div>`,
+        port5: `<div class="fade-in"><p class="greeting">ฝึกประสบการณ์โรงเรียน</p><div class="port-grid"><div class="port-item"><img src="images/work10.jpg" alt="ภาพการฝึกประสบการณ์"><p>ภาพการฝึกประสบการณ์</p></div></div></div>`
     };
 
     // --- 3. ฟังก์ชันสลับหน้า (Page Transition) ---
