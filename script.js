@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // หน้าหลัก
         home: `
             <div class="fade-in">
-                <p class="greeting">สวัสดีครับ 👋</p>
+                <p class="greeting">สวัสดีครับ</p>
                 <div class="card">
                     <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความสนใจการทำงานด้านไอทีซัพพอร์ต 
                     มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
