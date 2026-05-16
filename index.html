@@ -18,7 +18,7 @@
         <aside class="sidebar">
             <div class="profile-box">
                 <div class="avatar-container">
-                    <img src="Images/profile.jpg" alt="Thanasak Klinmali Profile">
+                    <img src="images/profile.jpg" alt="Thanasak Klinmali Profile">
                 </div>
                 <h1 class="name">ธนศักดิ์ กลิ่นมาลี</h1>
                 <p class="role">Computer Teacher & Developer</p>
@@ -59,23 +59,32 @@
 
                 <hr class="nav-divider">
 
-                <a href="#" class="nav-link" id="downloadResume" style="color: var(--vibrant-primary); border: 1px solid var(--vibrant-primary);">
+                <a href="Resume_Thanasak.pdf" class="nav-link" id="downloadResume" download="Resume_Thanasak.pdf" style="color: var(--vibrant-primary); border: 1px solid var(--vibrant-primary);">
                     <i class="fas fa-file-download"></i> <span>Download Resume</span>
                 </a>
             </nav>
         </aside>
 
         <main class="content-area">
-            <div id="dynamic-content"></div>
+            <div id="dynamic-content">
+                <div class="fade-in">
+                    <p class="greeting">สวัสดีครับ 👋</p>
+                    <div class="card">
+                        <p style="font-size: 1.2rem; letter-spacing: 0.5px;">สำเร็จการศึกษาสาขาคอมพิวเตอร์ มีความสนใจการทำงานด้านไอทีซัพพอร์ต 
+                        มีความรู้ความสามารถในการประกอบคอมพิวเตอร์และซ่อมบำรุง และสามารถใช้งานโปรแกรมพื้นฐาน Microsoft Office และ Canva  
+                        รวมถึงการใช้เครื่องมือการสอนออนไลน์ Google Classroom, Quizizz และ Kahoot พร้อมทั้งพัฒนาตนเองและเรียนรู้งานอย่างต่อเนื่อง 
+                        มีความอดทนต่อหน้าที่ตนเองที่ได้รับมอบหมาย มีความเป็นผู้นำ และสามารถทำงานใต้แรงดันได้ดี</p>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
     <div id="imageModal" class="modal">
         <div class="modal-close-zone" id="modalClose"><i class="fas fa-times"></i></div>
-        <img class="modal-content" id="imgFull">
+        <img class="modal-content" id="imgFull" alt="รูปภาพขยาย">
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
