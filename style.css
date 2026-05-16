@@ -147,9 +147,36 @@ body {
     box-shadow: 0 10px 20px -5px rgba(0, 242, 254, 0.4);
 }
 
+/* --- ปุ่มผลงานเด่น (Highlight Button) --- */
+.nav-link.highlight-btn {
+    border: 1px solid rgba(255, 0, 127, 0.3);
+    background: rgba(255, 0, 127, 0.03);
+    color: var(--text-vibrant-main);
+}
+
+.nav-link.highlight-btn:hover {
+    background: rgba(255, 0, 127, 0.15);
+    border-color: var(--vibrant-accent);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+}
+
+.nav-link.highlight-btn.active {
+    background: linear-gradient(135deg, var(--vibrant-accent), #ff409f);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(255, 0, 127, 0.4);
+}
+
+/* --- เส้นคั่นเมนู --- */
+.nav-divider {
+    border: none;
+    border-top: 1px solid var(--glass-border-vibrant);
+    margin: 10px 0;
+}
+
 /* --- Download Button Special Style --- */
 #downloadResume {
-    margin-top: 10px;
+    margin-top: 5px;
     border: 1px dashed var(--vibrant-primary);
     background: rgba(0, 242, 254, 0.05);
 }
@@ -205,6 +232,7 @@ body {
     padding: 60px;
     overflow-y: auto;
     background: radial-gradient(circle at top right, rgba(79, 172, 254, 0.05), transparent);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* รองรับแอนิเมชันสลับหน้า */
 }
 
 .content-area::-webkit-scrollbar {
@@ -237,9 +265,22 @@ body {
 /* --- Portfolio Grid & Images --- */
 .port-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 30px;
+}
+
+.port-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.port-item p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-vibrant-dim);
+    font-weight: 300;
 }
 
 .port-item img {
@@ -252,6 +293,7 @@ body {
     border: 1px solid var(--glass-border-vibrant);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
 
 .port-item img:hover {
@@ -314,6 +356,16 @@ body {
     }
 }
 
+/* --- แอนิเมชันสำหรับเนื้อหาใหม่ตอนเปลี่ยนหน้า --- */
+.fade-in {
+    animation: fadeInEffect 0.4s ease forwards;
+}
+
+@keyframes fadeInEffect {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* --- Mobile Responsive --- */
 @media (max-width: 900px) {
     .app-container {
@@ -330,11 +382,24 @@ body {
         border-bottom: 1px solid var(--glass-border-vibrant);
     }
 
+    .profile-box {
+        margin-bottom: 12px;
+    }
+
     .side-nav {
+        display: flex;
         flex-direction: row;
         overflow-x: auto;
         padding-bottom: 5px;
         gap: 10px;
+        /* ซ่อนแถบเลื่อนบนมือถือในเบราว์เซอร์ส่วนใหญ่ */
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+    }
+    
+    /* ซ่อนแถบเลื่อนเมนูสำหรับ Chrome, Safari และ Opera */
+    .side-nav::-webkit-scrollbar {
+        display: none;
     }
 
     .nav-link {
